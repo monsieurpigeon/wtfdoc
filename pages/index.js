@@ -9,7 +9,7 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>A new generation of unproductivity tools</p>
+        <p>A new generation of unproductivity tools. It's free</p>
         <p>
           Waste some more time on :
           <ul>
