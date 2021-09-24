@@ -12,6 +12,7 @@ export default function Contact() {
           <title>Contact Me</title>
         </Head>
         <h1>Contact Me</h1>
+        <p>If you want</p>
         <h2>
           <Link href="/">
             <a>Back to home</a>
