@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
-import Layout from "../../components/layout";
+import Layout from "../components/layout";
 
 export default function Contact() {
   // If you need to add attributes like, for example, className, add it to the a tag,
