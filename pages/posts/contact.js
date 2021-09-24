@@ -2,16 +2,16 @@ import Link from "next/link";
 import Head from "next/head";
 import Layout from "../../components/layout";
 
-export default function FirstPost() {
+export default function Contact() {
   // If you need to add attributes like, for example, className, add it to the a tag,
   // not to the Link tag.
   return (
     <>
       <Layout>
         <Head>
-          <title>First Post</title>
+          <title>Contact Me</title>
         </Head>
-        <h1>First Post</h1>
+        <h1>Contact Me</h1>
         <h2>
           <Link href="/">
             <a>Back to home</a>
