@@ -4,13 +4,9 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
-import Gun from "gun/gun";
 import Counter from "../components/counter";
-import { useEffect, useState } from "react";
 import { GetStaticProps } from "next";
 const qs = require('querystring')
-
-const gun = Gun("https://wtfdoc.herokuapp.com/gun");
 
 export default function Home({
   allPostsData,
@@ -21,36 +17,12 @@ export default function Home({
     id: string;
   }[];
 }) {
-  const [number, setNumber] = useState(0);
-  const BOARD = 'modez'
-
-  useEffect(() => {
-    gun.get(BOARD).on((state) => {
-      console.log(state)
-      setNumber(state.number);
-    }, true);
-  }, [])
- 
-
-  const handleAddOne = () => {
-    setNumber(number + 1);
-    gun.get(BOARD).put({ number: number + 1 });
-  };
-
-  const handleSubtractOne = () => {
-    setNumber(number - 1);
-    gun.get(BOARD).put({ number: number - 1 });
-  };
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Counter
-        number={number}
-        plusOne={handleAddOne}
-        minusOne={handleSubtractOne}
-      />
+      <Counter board={"/"}/>
       <section className={utilStyles.headingMd}>
         <p>A new generation of unproductivity tools. Its free</p>
         <p>
