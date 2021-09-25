@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/date.js"  ],
   "exclude": [
     "node_modules"
   ]

@@ -4,46 +4,48 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
-import Gun from 'gun/gun'
+import Gun from "gun/gun";
 import Counter from "../components/counter";
 import { useState } from "react";
+import { GetStaticProps } from "next";
 
-const gun = Gun('https://wtfdoc.herokuapp.com/gun')
+const gun = Gun("https://wtfdoc.herokuapp.com/gun");
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
-
-
-
-export default function Home({ allPostsData }) {
+export default function Home({
+  allPostsData,
+}: {
+  allPostsData: {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+}) {
   const [number, setNumber] = useState(0);
-  const [board, setBoard] = useState('modez');
-  gun.get(board).on(state => {
+  const [board, setBoard] = useState("modez");
+  gun.get(board).on((state) => {
     setNumber(state.number);
-    setBoard(state.board)
-  }, true)
+    setBoard(state.board);
+  }, true);
 
   const handleAddOne = () => {
     setNumber(number + 1);
-    gun.get(board).put({ number })
-  }
-  
+    gun.get(board).put({ number });
+  };
+
   const handleSubtractOne = () => {
     setNumber(number - 1);
-    gun.get(board).put({ number })
-  }
+    gun.get(board).put({ number });
+  };
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <Counter number={number} plusOne={handleAddOne} minusOne={handleSubtractOne}/>
+      <Counter
+        number={number}
+        plusOne={handleAddOne}
+        minusOne={handleSubtractOne}
+      />
       <section className={utilStyles.headingMd}>
         <p>A new generation of unproductivity tools. Its free</p>
         <p>
@@ -74,3 +76,12 @@ export default function Home({ allPostsData }) {
     </Layout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+};
