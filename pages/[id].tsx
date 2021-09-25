@@ -3,6 +3,7 @@ import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Counter from "../components/counter";
+import { useRouter } from 'next/router'
 
 export default function Doc({
   docData,
@@ -11,7 +12,22 @@ export default function Doc({
     id: string;
   };
 }) {
+  const router = useRouter()
   console.log(docData);
+  if (router.isFallback) {
+    return (
+      <Layout>
+        <Head>
+          <title>{router.basePath}</title>
+        </Head>
+        <Counter board={router.basePath} />
+        <article>
+          <h1 className={utilStyles.headingXl}>{router.basePath}</h1>
+          <div className={utilStyles.lightText}></div>
+        </article>
+      </Layout>
+    );
+  }
   return (
     <Layout>
       <Head>
@@ -19,7 +35,7 @@ export default function Doc({
       </Head>
       <Counter board={docData.id} />
       <article>
-        <h1 className={utilStyles.headingXl}>{docData.id}</h1>
+        <h1 className={utilStyles.headingXl}>PRIVATE: {docData.id}</h1>
         <div className={utilStyles.lightText}></div>
       </article>
     </Layout>
@@ -29,7 +45,7 @@ export default function Doc({
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [{ params: { id: "modez" } }],
-    fallback: false,
+    fallback: true
   };
 };
 
