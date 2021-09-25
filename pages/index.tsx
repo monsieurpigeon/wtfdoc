@@ -22,31 +22,24 @@ export default function Home({
   }[];
 }) {
   const [number, setNumber] = useState(0);
-  const [board, setBoard] = useState("modez");
-  const [location, setLocation] = useState("");
+  const BOARD = 'modez'
 
   useEffect(() => {
-    const query = qs.parse(window.location.search.replace('?', ''))
-    const board = query.board || Math.random().toString(36).slice(2)
-    const location: string = /board/.test(window.location + "") ? window.location + "" : `${window.location}?board=${board}`
-    setBoard(board);
-    setLocation(location);
-  }, []);
-
-  gun.get(board).on((state) => {
-    console.log(state)
-    setNumber(state.number);
-    setBoard(state.board);
-  }, true);
+    gun.get(BOARD).on((state) => {
+      console.log(state)
+      setNumber(state.number);
+    }, true);
+  }, [])
+ 
 
   const handleAddOne = () => {
     setNumber(number + 1);
-    gun.get(board).put({ number: number });
+    gun.get(BOARD).put({ number: number + 1 });
   };
 
   const handleSubtractOne = () => {
     setNumber(number - 1);
-    gun.get(board).put({ number });
+    gun.get(BOARD).put({ number: number - 1 });
   };
   return (
     <Layout home>
