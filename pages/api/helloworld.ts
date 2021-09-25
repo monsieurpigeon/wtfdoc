@@ -4,7 +4,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
-  res.status(200).json({ text: "Hello World" });
+  res.status(200).json({ text: "Hello World", timestamp: Date.now() });
   if (req.method === "POST") {
     // Process a POST request
   } else {
