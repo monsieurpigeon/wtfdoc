@@ -12,19 +12,12 @@ export default function Doc({
     id: string;
   };
 }) {
+  console.log("docData", docData)
   const router = useRouter()
-  console.log(docData);
   if (router.isFallback) {
     return (
       <Layout>
-        <Head>
-          <title>{router.basePath}</title>
-        </Head>
-        <Counter board={router.basePath} />
-        <article>
-          <h1 className={utilStyles.headingXl}>{router.basePath}</h1>
-          <div className={utilStyles.lightText}></div>
-        </article>
+        <h1>LOADING</h1>
       </Layout>
     );
   }
@@ -35,7 +28,7 @@ export default function Doc({
       </Head>
       <Counter board={docData.id} />
       <article>
-        <h1 className={utilStyles.headingXl}>PRIVATE: {docData.id}</h1>
+        <h1 className={utilStyles.headingXl}>{docData.id}</h1>
         <div className={utilStyles.lightText}></div>
       </article>
     </Layout>
@@ -44,7 +37,7 @@ export default function Doc({
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: [{ params: { id: "modez" } }],
+    paths: [],
     fallback: true
   };
 };
