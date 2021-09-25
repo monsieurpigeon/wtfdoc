@@ -244,6 +244,11 @@
   resolved "https://registry.yarnpkg.com/@types/asn1js/-/asn1js-2.0.2.tgz#bb1992291381b5f06e22a829f2ae009267cdf8c5"
   integrity sha512-t4YHCgtD+ERvH0FyxvNlYwJ2ezhqw7t+Ygh4urQ7dJER8i185JPv6oIM3ey5YQmGN6Zp9EMbpohkjZi9t3UxwA==
 
+"@types/gun@^0.9.3":
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@types/gun/-/gun-0.9.3.tgz#cdc1116e4a43323733a577e7bc330fdf731a7446"
+  integrity sha512-ydC8P4EHbVUqSK4+BhVQW1b4DCksLVKdnLJENJYuiBQDvk2UfA79vTcKxG7hnpyHPas/7yT6pMviMSDp5m7rmg==
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"

@@ -6,8 +6,9 @@ import Link from "next/link";
 import Date from "../components/date";
 import Gun from "gun/gun";
 import Counter from "../components/counter";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GetStaticProps } from "next";
+const qs = require('querystring')
 
 const gun = Gun("https://wtfdoc.herokuapp.com/gun");
 
@@ -22,14 +23,25 @@ export default function Home({
 }) {
   const [number, setNumber] = useState(0);
   const [board, setBoard] = useState("modez");
+  const [location, setLocation] = useState("");
+
+  useEffect(() => {
+    const query = qs.parse(window.location.search.replace('?', ''))
+    const board = query.board || Math.random().toString(36).slice(2)
+    const location: string = /board/.test(window.location + "") ? window.location + "" : `${window.location}?board=${board}`
+    setBoard(board);
+    setLocation(location);
+  }, []);
+
   gun.get(board).on((state) => {
+    console.log(state)
     setNumber(state.number);
     setBoard(state.board);
   }, true);
 
   const handleAddOne = () => {
     setNumber(number + 1);
-    gun.get(board).put({ number });
+    gun.get(board).put({ number: number });
   };
 
   const handleSubtractOne = () => {

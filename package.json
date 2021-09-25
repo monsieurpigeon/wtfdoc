@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/gun": "^0.9.3",
     "classnames": "^2.3.1",
     "date-fns": "^2.24.0",
     "gray-matter": "^4.0.3",
