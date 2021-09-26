@@ -1,7 +1,12 @@
 .title {
+    white-space: pre-line;
     display: block;
     margin: 20px;
     color: grey;
+}
+
+.htmlTitle {
+    white-space: pre-wrap;
 }
 
 .textarea {

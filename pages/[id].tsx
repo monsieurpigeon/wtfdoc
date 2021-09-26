@@ -27,11 +27,11 @@ export default function Doc({
       <Head>
         <title>{docData.id}</title>
       </Head>
-      <Counter board={`counter + ${docData.id}`} />
+      <Counter board={docData.id} />
       <article>
         <h1 className={utilStyles.headingXl}>{docData.id}</h1>
         <div className={utilStyles.lightText}></div>
-        <WTFTextInput board={`subtitle${docData.id}`}/>
+        <WTFTextInput board={docData.id}/>
       </article>
     </Layout>
   );
