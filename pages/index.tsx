@@ -25,7 +25,11 @@ export default function Home({
       <Counter board={"/"}/>
       <section className={utilStyles.headingMd}>
         <p>A new generation of unproductivity tools. Its free</p>
-        <p>All of this is working without infrastructure using <a href="https://gun.eco/">Gun database</a></p>
+        <p>You can visit any URL and get a WTFDoc : <a href="/RANDOM">RANDOM</a></p>
+        <p>You can write whatever you want in it, the content is only stored on your private machines</p>
+        <p>If every writer closes the tab of this WTFDoc, the content is invisible for anyone else</p>
+        <p>All of this is working without infrastructure using <a href="https://gun.eco/">Gun database</a>, <a href="https://nextjs.org/">NextJS</a>, <a href="https://heroku.com/">Heroku</a> and <a href="https://vercel.com/">Vercel</a></p>
+        <p>Check out the trending pages on the right. These are timestamps:</p>
         <p>All the website is open-sourced on <a href="https://github.com/monsieurpigeon/wtfdoc">Github</a>, can't wait for your PRs</p>
         {/* <p>
           Waste some more time on :
