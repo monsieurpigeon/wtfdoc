@@ -7,10 +7,10 @@
 }
 
 .button {
-    width: 100px;
-    height: 100px;
+    height: 300px;
     font-size: xx-large;
     border: none;
+    width: 100px;
 }
 
 .picker {
