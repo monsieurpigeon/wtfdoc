@@ -31,3 +31,10 @@
     top: 100px;
     margin: 20px;
 }
+
+
+@media only screen and (max-width: 850px) {
+    .wrapper {
+        position: inherit;
+    }
+}

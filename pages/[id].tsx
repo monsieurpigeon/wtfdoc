@@ -3,9 +3,10 @@ import Head from "next/head";
 import utilStyles from "../styles/utils.module.css";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Counter from "../components/counter";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import WTFTextInput from "../components/WTFTextInput";
 import Emoji from "../components/emoji";
+import styles from "./doc.module.css";
 
 export default function Doc({
   docData,
@@ -14,8 +15,8 @@ export default function Doc({
     id: string;
   };
 }) {
-  console.log("docData", docData)
-  const router = useRouter()
+  console.log("docData", docData);
+  const router = useRouter();
   if (router.isFallback) {
     return (
       <Layout>
@@ -28,13 +29,17 @@ export default function Doc({
       <Head>
         <title>{docData.id}</title>
       </Head>
-      <Counter board={docData.id} />
-      <Emoji board={docData.id}/>
       <article>
-        <h1 className={utilStyles.headingXl}>{docData.id}</h1>
-        <div className={utilStyles.lightText}></div>
-        <WTFTextInput board={docData.id}/>
+        <div className={styles.emoji}>
+          <Emoji board={docData.id} />
+        </div>
+        <div className={styles.title}>
+          <h1 className={utilStyles.headingXl}>{docData.id}</h1>
+          <div className={utilStyles.lightText}></div>
+          <WTFTextInput board={docData.id} />
+        </div>
       </article>
+      <Counter board={docData.id} />
     </Layout>
   );
 }
@@ -42,7 +47,7 @@ export default function Doc({
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: true
+    fallback: true,
   };
 };
 
