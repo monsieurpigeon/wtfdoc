@@ -2,8 +2,7 @@ import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
-import Link from "next/link";
-import Date from "../components/date";
+import Emoji from "../components/emoji";
 import Counter from "../components/counter";
 import { GetStaticProps } from "next";
 const qs = require('querystring')
@@ -23,6 +22,7 @@ export default function Home({
         <title>{siteTitle}</title>
       </Head>
       <Counter board={"/"}/>
+      <Emoji board={"/"}/>
       <section className={utilStyles.headingMd}>
         <p>A new generation of unproductivity tools. Its free</p>
         <p>You can visit any URL and get a WTFDoc : <a href="/RANDOM">RANDOM</a></p>
