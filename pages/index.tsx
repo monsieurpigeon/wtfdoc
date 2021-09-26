@@ -25,6 +25,8 @@ export default function Home({
       <Counter board={"/"}/>
       <section className={utilStyles.headingMd}>
         <p>A new generation of unproductivity tools. Its free</p>
+        <p>All of this is working without infrastructure using <a href="https://gun.eco/">Gun database</a></p>
+        <p>All the website is open-sourced on <a href="https://github.com/monsieurpigeon/wtfdoc">Github</a>, can't wait for your PRs</p>
         {/* <p>
           Waste some more time on :
           <ul>

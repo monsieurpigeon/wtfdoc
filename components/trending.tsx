@@ -3,7 +3,6 @@ import Link from "next/link";
 
 export default function Trending() {
   const now = Date.now().toString();
-  console.log(now);
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>TRENDING</div>
