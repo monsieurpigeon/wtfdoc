@@ -31,7 +31,7 @@ export default function Doc({
       <article>
         <h1 className={utilStyles.headingXl}>{docData.id}</h1>
         <div className={utilStyles.lightText}></div>
-        <WTFTextInput board={`subtitle + ${docData.id}`}/>
+        <WTFTextInput board={`subtitle${docData.id}`}/>
       </article>
     </Layout>
   );
