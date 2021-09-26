@@ -4,6 +4,7 @@ import utilStyles from "../styles/utils.module.css";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Counter from "../components/counter";
 import { useRouter } from 'next/router'
+import WTFTextInput from "../components/WTFTextInput";
 
 export default function Doc({
   docData,
@@ -26,10 +27,11 @@ export default function Doc({
       <Head>
         <title>{docData.id}</title>
       </Head>
-      <Counter board={docData.id} />
+      <Counter board={`counter + ${docData.id}`} />
       <article>
         <h1 className={utilStyles.headingXl}>{docData.id}</h1>
         <div className={utilStyles.lightText}></div>
+        <WTFTextInput board={`subtitle + ${docData.id}`}/>
       </article>
     </Layout>
   );

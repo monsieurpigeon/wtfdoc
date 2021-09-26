@@ -1,0 +1,10 @@
+.title {
+    display: block;
+    margin: 20px;
+    color: grey;
+}
+
+.textarea {
+    width: 100%;
+    min-height: 200px;
+}
