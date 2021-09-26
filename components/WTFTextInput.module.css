@@ -26,5 +26,12 @@
 }
 
 .update {
-
+    border: none;
+    padding: 10px 25px;
+    position: absolute;
+    display: block;
+    right: 0px;
+    top: 0px;
+    margin: 20px;
+    font-size: 42px;
 }

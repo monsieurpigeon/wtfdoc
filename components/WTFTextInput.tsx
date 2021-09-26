@@ -49,7 +49,7 @@ export default function WTFTextInput({ board }) {
       <button onClick={revealEdit} className={styles.edit}>Edit</button>
       <div id="title" className={styles.htmlTitle} dangerouslySetInnerHTML={{ __html: title }} />
       <textarea id="input" className={styles.textarea} required />
-      <button id="update" className={styles.update} type="submit">Update</button>
+      <button id="update" className={styles.update} type="submit">Save</button>
     </form>
   );
 }
