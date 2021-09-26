@@ -8,21 +8,21 @@ export default function Counter({ board }) {
   const BOARD = board;
 
   useEffect(() => {
-    gun.get(BOARD).on((state) => {
-      console.log(state);
-      if (!state.counter) state.counter = 0;
-      setCounter(state.counter);
+    gun.get(BOARD).get("counter").on((state) => {
+      setCounter(state);
     }, true);
   }, []);
 
   const handleAddOne = () => {
-    gun.get(BOARD).put({ counter: counter + 1 });
-    setCounter(counter + 1);
+    const tmp: any = counter + 1;
+    gun.get(BOARD).get("counter").put(tmp);
+    setCounter(tmp);
   };
 
   const handleSubtractOne = () => {
-    gun.get(BOARD).put({ counter: counter - 1 });
-    setCounter(counter - 1);
+    const tmp: any = counter - 1;
+    gun.get(BOARD).get("counter").put(tmp);
+    setCounter(tmp);
   };
   return (
     <div className={`${styles.wrapper}`}>

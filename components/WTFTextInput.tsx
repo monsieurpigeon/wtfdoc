@@ -8,9 +8,8 @@ export default function WTFTextInput({ board }) {
   const BOARD = board;
 
   useEffect(() => {
-    gun.get(BOARD).on((state) => {
-      if (!state.title) state.title = "";
-      const tmpTitle = state.title.replace(/(?:\r\n|\r|\\n)/g, '\n');
+    gun.get(BOARD).get("title").on((state) => {
+      const tmpTitle = state.replace(/(?:\r\n|\r|\\n)/g, '\n');
       setTitle(tmpTitle);
       (document.getElementById('input') as HTMLInputElement).value= tmpTitle;
     }, true);
@@ -22,7 +21,7 @@ export default function WTFTextInput({ board }) {
   const updateTitle = (event) => {
     event.preventDefault();
     const title = event.target.input.value
-    gun.get(BOARD).put({ title });
+    gun.get(BOARD).get("title").put(title);
     setTitle(title);
     (document.getElementById('title') as HTMLInputElement).style.display = "block";
     (document.getElementById('update') as HTMLInputElement).style.display = "none";
@@ -45,7 +44,6 @@ export default function WTFTextInput({ board }) {
   //     setNumber(number - 1);
   //     gun.get(BOARD).put({ number: number - 1 });
   //   };
-  console.log(title);
   return (
     <form onSubmit={updateTitle}>
       <button onClick={revealEdit} className={styles.edit}>Edit</button>
