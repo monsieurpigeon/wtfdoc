@@ -1,11 +1,10 @@
 .line {
     display: block;
+    color: darkblue;
     text-align: right;
-    border: 1px solid blue;
-    padding-right: 5px;
-    padding-left: 20px;
+    padding: 5px 10px;
     background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(9,9,121,1) 2%, rgba(0,212,255,1) 10%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(0, 0, 160, 0.5) 0%, rgb(255, 255, 255) 2%, rgba(0,212,255,1) 100%);
     transition: color 0.5s, background-color 0.5s;
 }
 
@@ -13,6 +12,14 @@
     background: rgb(2,0,36);
     color: white;
     
+}
+
+.expiration {
+    font-size: xx-small;
+    text-align: left;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 .title {
