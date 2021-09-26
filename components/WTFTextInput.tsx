@@ -11,7 +11,7 @@ export default function WTFTextInput({ board }) {
     gun.get(BOARD).on((state) => {
       console.log(state);
       setTitle(state.title);
-      document.getElementById('title').value = state.title;
+      (document.getElementById('title') as HTMLInputElement).value = state.title;
     }, true);
   }, []);
 
