@@ -23,7 +23,7 @@ export default function Home({
         <title>{siteTitle}</title>
       </Head>
       <Counter board={"/"}/>
-      <section className={utilStyles.headingMd}>
+      {/* <section className={utilStyles.headingMd}>
         <p>A new generation of unproductivity tools. Its free</p>
         <p>
           Waste some more time on :
@@ -33,7 +33,7 @@ export default function Home({
             </li>
           </ul>
         </p>
-      </section>
+      </section> */}
       {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
