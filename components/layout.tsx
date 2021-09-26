@@ -3,9 +3,13 @@ import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import Trending from "./trending";
 
 const name = "WTFDoc";
 export const siteTitle = "WTFDoc";
+
+const trending = Date.now().toString();
+console.log(trending);
 
 export default function Layout({
   children,
@@ -49,6 +53,7 @@ export default function Layout({
         )}
       </header>
       <main>{children}</main>
+      <Trending/>
       {!home && (
         <div className={styles.backToHome}>
           <Link href="/">
