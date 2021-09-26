@@ -2,6 +2,7 @@
     display: block;
     text-align: right;
     border: 1px solid blue;
+    padding-right: 5px;
     padding-left: 20px;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(9,9,121,1) 2%, rgba(0,212,255,1) 10%, rgba(0,212,255,1) 100%);
