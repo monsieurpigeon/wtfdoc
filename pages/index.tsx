@@ -23,17 +23,17 @@ export default function Home({
         <title>{siteTitle}</title>
       </Head>
       <Counter board={"/"}/>
-      {/* <section className={utilStyles.headingMd}>
+      <section className={utilStyles.headingMd}>
         <p>A new generation of unproductivity tools. Its free</p>
-        <p>
+        {/* <p>
           Waste some more time on :
           <ul>
             <li>
               <a href="https://www.loana2001.com">Loana2001</a>
             </li>
           </ul>
-        </p>
-      </section> */}
+        </p> */}
+      </section>
       {/* <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
