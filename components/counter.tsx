@@ -1,19 +1,18 @@
 import Gun from "gun/gun";
-
+import styles from "./counter.module.css";
 import { useEffect, useState } from "react";
 const gun = Gun("https://wtfdoc.herokuapp.com/gun");
 
-export default function Counter({board}) {
+export default function Counter({ board }) {
   const [number, setNumber] = useState(0);
-  const BOARD = board
+  const BOARD = board;
 
   useEffect(() => {
     gun.get(BOARD).on((state) => {
-      console.log(state)
+      console.log(state);
       setNumber(state.number);
     }, true);
-  }, [])
- 
+  }, []);
 
   const handleAddOne = () => {
     setNumber(number + 1);
@@ -25,10 +24,10 @@ export default function Counter({board}) {
     gun.get(BOARD).put({ number: number - 1 });
   };
   return (
-    <>
-      <h2>{number}</h2>
-      <button onClick={handleSubtractOne}>Subtract 1</button>
-      <button onClick={handleAddOne}>Add 1</button>
-    </>
+    <div className={`${styles.wrapper}`}>
+      <button className={`${styles.plusOne} ${styles.buttonVote}`} onClick={handleAddOne}>+</button>
+      <div className={`${styles.number}`}>{number}</div>
+      <button className={`${styles.minusOne} ${styles.buttonVote}`} onClick={handleSubtractOne}>-</button>
+    </div>
   );
 }
