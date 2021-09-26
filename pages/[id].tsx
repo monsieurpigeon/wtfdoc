@@ -5,6 +5,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import Counter from "../components/counter";
 import { useRouter } from 'next/router'
 import WTFTextInput from "../components/WTFTextInput";
+import Emoji from "../components/emoji";
 
 export default function Doc({
   docData,
@@ -28,6 +29,7 @@ export default function Doc({
         <title>{docData.id}</title>
       </Head>
       <Counter board={docData.id} />
+      <Emoji board={docData.id}/>
       <article>
         <h1 className={utilStyles.headingXl}>{docData.id}</h1>
         <div className={utilStyles.lightText}></div>

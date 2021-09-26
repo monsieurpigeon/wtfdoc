@@ -1,0 +1,18 @@
+.wrapper {
+    position: absolute;
+    margin: 20px;
+    top: 0px;
+    left: 120px;
+
+}
+
+.button {
+    width: 100px;
+    height: 100px;
+    font-size: xx-large;
+    border: none;
+}
+
+.picker {
+
+}

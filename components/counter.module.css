@@ -6,11 +6,12 @@
   left: 0px;
   top: 0px;
   width: 100px;
-  height: 200px;
+  height: 300px;
 }
 
 .buttonVote {
-    flex-grow: 1;
+  height: 100px;
+  display: block;
   border: none;
   color: white;
   padding: 20px 20px;
