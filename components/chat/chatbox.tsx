@@ -1,39 +1,39 @@
 import React, { Component, useState } from "react";
 import Gun from "gun/gun";
 
-Gun()
-const formatMsgs = (msgs) =>
-  Object.keys(msgs)
-    .map((key) => ({ key, ...msgs[key] }))
-    .filter((m) => Boolean(m.when) && m.key !== "_")
-    .sort((a, b) => a.when - b.when)
-    .map(
-      (m) => ((m.whenFmt = new Date(m.when).toLocaleString().toLowerCase()), m)
-      );
+// Gun()
+// const formatMsgs = (msgs) =>
+//   Object.keys(msgs)
+//     .map((key) => ({ key, ...msgs[key] }))
+//     .filter((m) => Boolean(m.when) && m.key !== "_")
+//     .sort((a, b) => a.when - b.when)
+//     .map(
+//       (m) => ((m.whenFmt = new Date(m.when).toLocaleString().toLowerCase()), m)
+//       );
 
 export default function Chatbox({ board }) {
-  const msgs = formatMsgs(this.state.msgs);
-  const [name, setName] = useState("");
+  // const msgs = formatMsgs(this.state.msgs);
+  // const [name, setName] = useState("");
 
-  const send = (e) => {
-    e.preventDefault()
-    const who = name || 'user42'
-    setName(who);
-    document.cookie = ('alias=' + who)
-    const when = Gun.time.is()
-    const key = `${when}_${Gun.text.random(4)}`
-    this.gun.path(key).put({
-      who,
-      when,
-      what: this.state.newMsg,
-    })
-    this.setState({newMsg: ''})
-  }
+  // const send = (e) => {
+  //   e.preventDefault()
+  //   const who = name || 'user42'
+  //   setName(who);
+  //   document.cookie = ('alias=' + who)
+  //   const when = Gun.time.is()
+  //   const key = `${when}_${Gun.text.random(4)}`
+  //   this.gun.path(key).put({
+  //     who,
+  //     when,
+  //     what: this.state.newMsg,
+  //   })
+  //   this.setState({newMsg: ''})
+  // }
 
 
   return (
     <div>
-      <ul>
+      {/* <ul>
         {msgs.map((msg) => (
           <li key={msg.key}>
             <b>{msg.who}:</b> {msg.what}
@@ -53,7 +53,7 @@ export default function Chatbox({ board }) {
           onChange={(e) => this.setState({ newMsg: e.target.value })}
         />
         <button onClick={this.send}>Send</button>
-      </form>
+      </form> */}
     </div>
   );
 }
