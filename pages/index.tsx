@@ -24,7 +24,7 @@ export default function Home({
       <Counter board={"/"}/>
       <Emoji board={"/"}/>
       <section className={utilStyles.headingMd}>
-        <p>A new generation of unproductivity tools. Its free</p>
+        <p>A new generation of unproductivity tools. It is free</p>
         <p>You can visit any URL and get a WTFDoc : <a href="/RANDOM">RANDOM</a></p>
         {/* <p>You can write whatever you want in it, the content is only stored on your private machines</p>
         <p>If every writer closes the tab of this WTFDoc, the content is invisible for anyone else</p> */}
